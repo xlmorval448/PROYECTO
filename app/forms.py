@@ -25,5 +25,4 @@ class FiltroIngredientesForm(forms.ModelForm):
 class CrudForm(forms.ModelForm):
     class Meta:
         model = Ingrediente
-        # Incluye todos los campos que quieres que el usuario pueda ver y editar
         fields = ["nombre", "categoria", "mercado_habitual", "descripcion"]

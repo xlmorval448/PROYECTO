@@ -32,13 +32,17 @@ def ingrediente_crud(request, pk):
 
         if crud_form.is_valid():
             crud_form.save()
-            return redirect('ingrediente_lista')
+            return redirect('ingredientes_lista')
     else:
         crud_form = CrudForm(instance=ingrediente)
         
-    return render(request, "app/ingredientes_detalle_editar.html", {'ingrediente': ingrediente,'crud_form': crud_form,'es_edicion': True})
+    return render(request, "app/ingrediente_crud.html", {'ingrediente': ingrediente,'crud_form': crud_form,'editando': True})
 
 def ingrediente_eliminar(request, pk):
     ingrediente = get_object_or_404(Ingrediente, pk=pk)
-    ingrediente.delete()
-    return redirect('ingrediente_lista')
+
+    if request.method == 'POST':
+        ingrediente.delete()
+        return redirect('ingredientes_lista') 
+    
+    return render(request, 'app/confirmar_borrado.html', {'ingrediente': ingrediente})

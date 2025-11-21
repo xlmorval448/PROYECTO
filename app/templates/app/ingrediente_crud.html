@@ -1,7 +1,21 @@
 {% extends "app/base.html" %}
 
-{% block titulo%}Incio{% endblock%}
+{% block titulo %}
+    Vista Ingrediente
+{% endblock %}
 
 {% block contenido %}
+
+    <h2>Editar Ingrediente: {{ ingrediente.nombre }}</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        {{ crud_form.as_p }}
+        
+        <button type="submit">Guardar Cambios</button>
+
+        <a href="{% url 'ingredientes_lista' %}">Volver a la Lista</a>
+    </form>
 
 {% endblock contenido %}

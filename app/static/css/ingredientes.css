@@ -1,93 +1,136 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: white; 
-    color: black;
+    /* Fondo muy claro y relajante */
+    background-color: #f7f7f7; 
+    color: #2f3640; /* Texto principal: Gris oscuro (casi negro) */
     line-height: 1.6;
 }
 
 h2, h3 {
-    color: red; 
+    /* Color de títulos: Azul grisáceo suave y profesional */
+    color: #4a69bd; 
     margin-left: 40px;
 }
 
+/* --- ESTILO DE FORMULARIO DE FILTROS --- */
 form {
-    align-self: flex-start;
-    background-color: white;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 20px auto;
+    margin-left: 20px;
+    background-color: white; 
+    padding: 20px;
+    border-radius: 12px; /* Bordes más redondeados */
     display: inline-block; 
-    width: 98%; 
-    border: 1px solid black; 
-    text-align: left; /* Alineamos todo a la izquierda */
+    width: 70vw; 
+    /* Borde negro diferenciador */
+    border: 2px solid #2f3640; 
+    text-align: left; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 /* AJUSTES CLAVE para que label e input/select queden en línea */
 form label {
     font-weight: bold;
-    color: black;
+    color: #2f3640;
     margin-bottom: 5px;
-    /* Cambiar a inline-block para que no ocupe todo el ancho */
     display: inline-block; 
-    background-color: white; 
+    background-color: transparent; 
     padding: 5px 10px;
     border-radius: 4px;
     text-align: left;
-    margin-right: 15px; /* Espacio entre grupos de input */
+    margin-right: 15px; 
 }
 
 input, select {
-    padding: 8px;
-    border: 1px solid black;
-    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #2f3640; /* Borde de input negro */
+    border-radius: 6px;
     min-width: 150px;
     background-color: white;
-    color: black;
-    /* Cambiar a inline-block para que quede al lado de su label */
+    color: #2f3640;
     display: inline-block; 
-    /* Quitar margin: auto */
     margin: 5px 0; 
+    transition: border-color 0.3s;
+}
+input:focus, select:focus {
+    border-color: #4a69bd; /* Color de foco bonito */
+    box-shadow: 0 0 5px rgba(74, 105, 189, 0.5);
+    outline: none;
 }
 
+/* --- ESTILO DE BOTONES --- */
 form button, form a {
-    background-color: red;
+    /* Color de botón primario: Azul grisáceo */
+    background-color: #4a69bd;
     color: white;
-    padding: 10px 15px;
-    border: 1px solid red; 
-    border-radius: 4px;
+    padding: 10px 18px;
+    border: 2px solid #4a69bd; /* Borde a juego */
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, border-color 0.3s;
     font-weight: bold;
     text-decoration: none;
     display: inline-block;
     margin: 10px 5px;
 }
+form button:hover, form a:hover {
+    background-color: #2f3640; /* Hover oscuro y elegante */
+    border-color: #2f3640;
+}
 
+/* --- ESTILO DE TABLA --- */
 table {
     width: 98%;
     border-collapse: collapse;
-    margin: 20px auto;
+    margin: 25px auto;
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    border-radius: 8px;
+    /* Sombra elegante */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
+    border-radius: 12px;
     overflow: hidden;
 }
 
 thead {
-    background-color: black; 
+    /* Cabecera diferenciadora: Gris oscuro (casi negro) */
+    background-color: #2f3640; 
     color: white;
 }
 
 th, td {
     padding: 15px;
     text-align: center;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid #a4b0be; /* Líneas de separación suaves */
+}
+/* Estilo para filas pares (zebra) */
+tbody tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+tbody tr:hover {
+    background-color: #e0e0e0; /* Efecto hover suave en la fila */
 }
 
 td.acciones a {
-    color: red;
+    /* Color de los iconos de acción: Azul bonito */
+    color: #4a69bd;
     background: none; 
     padding: 5px;
     border: none; 
-    margin: 0 3px;
+    margin: 0 5px;
+    font-size: 1.2em;
+}
+td.acciones a:hover {
+    color: #2f3640; /* Hover oscuro */
+}
+
+/* --- ESTILOS PARA TEXTAREA (si aplica) --- */
+textarea {
+    padding: 10px;
+    border: 1px solid #2f3640;
+    border-radius: 6px;
+    min-width: 300px; 
+    min-height: 100px; 
+    background-color: white;
+    color: #2f3640;
+    display: block; 
+    margin: 10px 0; 
+    box-sizing: border-box; 
+    resize: vertical; 
 }
